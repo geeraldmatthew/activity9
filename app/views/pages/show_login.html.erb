@@ -1,0 +1,26 @@
+<link rel="stylesheet" type="text/css" href="login.css">
+
+<%= form_tag "/login" do %>
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form>
+    	<div class="field fadeIn second">
+			<%= text_field_tag :username %>
+    	</div>
+    	<div class="field fadeIn third">
+    		<%= text_field_tag :password %>
+    	</div>
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+  </div>
+</div>
+<% end %>

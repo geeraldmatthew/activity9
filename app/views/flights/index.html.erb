@@ -1,0 +1,15 @@
+<%= render "shared/jumbotron", header: "Flight Information", tag_line: "..." %>
+
+<% if current_user %>
+  Logged in as <%= current_user.email %>.
+  <%= link_to “Log Out”, logout_path %>
+<% else %>
+  <%= link_to “Sign Up”, signup_path %> or 
+  <%= link_to “Log In”, login_path %>
+<% end %>
+
+<%= pie_chart Seat.group(:flight_id).count %>
+
+<%= render "list_flight", flights: @open_flights, header: "Open Flights" %>
+
+<%= render "list_flight", flights: @closed_flights, header: "Closed Flights" %>
